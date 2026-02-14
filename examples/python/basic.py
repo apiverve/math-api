@@ -14,22 +14,14 @@ API_URL = 'https://api.apiverve.com/v1/math'
 
 def call_math_api():
     """
-    Make a POST request to the Math Calculator API
+    Make a GET request to the Math Calculator API
     """
     try:
-        # Request body
-        request_body &#x3D; {
-    &#x27;operation&#x27;: &#x27;add&#x27;,
-    &#x27;a&#x27;: 10,
-    &#x27;b&#x27;: 5
-}
-
         headers = {
-            'x-api-key': API_KEY,
-            'Content-Type': 'application/json'
+            'x-api-key': API_KEY
         }
 
-        response = requests.post(API_URL, headers=headers, json=request_body)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
