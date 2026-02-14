@@ -9,24 +9,15 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/math';
 
 /**
- * Make a POST request to the Math Calculator API
+ * Make a GET request to the Math Calculator API
  */
 async function callMathCalculatorAPI() {
   try {
-    // Request body
-    const requestBody &#x3D; {
-    &quot;operation&quot;: &quot;add&quot;,
-    &quot;a&quot;: 10,
-    &quot;b&quot;: 5
-};
-
     const response = await fetch(API_URL, {
-      method: 'POST',
+      method: 'GET',
       headers: {
-        'x-api-key': API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
+        'x-api-key': API_KEY
+      }
     });
 
     // Check if response is successful
