@@ -1,23 +1,25 @@
 openapi: 3.0.4
 info:
   title: Math Calculator
-  description: Math Calculator performs mathematical operations including basic arithmetic, advanced functions, and expression evaluation.
+  description: >-
+    Math Calculator performs mathematical operations including basic arithmetic,
+    advanced functions, and expression evaluation.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/math:
     post:
-      summary: Calculate
-      description: Math Calculator performs mathematical operations including basic arithmetic, advanced functions, and expression evaluation.
+      summary: Perform Operation
+      description: Perform a specific mathematical operation
       operationId: math
       parameters: []
       responses:
@@ -35,11 +37,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   result: 15
                   operation: add
@@ -47,15 +49,15 @@ paths:
                     a: 10
                     b: 5
                   steps:
-                  - 10 + 5 = 15
+                    - 10 + 5 = 15
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
       requestBody:
-        required: false
+        required: true
         content:
           application/json:
             schema:
@@ -63,23 +65,20 @@ paths:
               properties:
                 operation:
                   type: string
-                  description: 'Operation: add, subtract, multiply, divide, power, modulo, sqrt, abs, round, floor, ceil'
-                  example: add
+                  description: Operation to perform
                 a:
                   type: number
-                  description: First number (or only number for single-param operations)
-                  example: 10
+                  description: >-
+                    First number (or only number for single-param operations
+                    like sqrt, abs)
                 b:
                   type: number
-                  description: Second number (for two-param operations)
-                  example: 5
-                expression:
-                  type: string
-                  description: Mathematical expression to evaluate (alternative to operation mode)
-              example:
-                operation: add
-                a: 10
-                b: 5
+                  description: >-
+                    Second number (for two-param operations like add, subtract,
+                    multiply, divide)
+              required:
+                - operation
+                - a
 components:
   securitySchemes:
     api_key:
@@ -87,4 +86,8 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  operation: add
+  a: 10
+  b: 5
