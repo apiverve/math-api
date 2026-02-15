@@ -11,31 +11,21 @@ namespace APIVerve.API.MathCalculator
     public class MathCalculatorQueryOptions
     {
         /// <summary>
-        /// Operation: add, subtract, multiply, divide, power, modulo, sqrt, abs, round, floor, ceil
-        /// Example: add
+        /// Operation to perform
         /// </summary>
         [JsonProperty("operation")]
         public string Operation { get; set; }
 
         /// <summary>
-        /// First number (or only number for single-param operations)
-        /// Example: 10
+        /// First number (or only number for single-param operations like sqrt, abs)
         /// </summary>
         [JsonProperty("a")]
         public string A { get; set; }
 
         /// <summary>
-        /// Second number (for two-param operations)
-        /// Example: 5
+        /// Second number (for two-param operations like add, subtract, multiply, divide)
         /// </summary>
         [JsonProperty("b")]
         public string B { get; set; }
-
-        /// <summary>
-        /// Mathematical expression to evaluate (alternative to operation mode)
-        /// Example: (2 + 3) * 4
-        /// </summary>
-        [JsonProperty("expression")]
-        public string Expression { get; set; }
     }
 }
