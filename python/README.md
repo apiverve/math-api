@@ -44,7 +44,11 @@ from apiverve_mathcalculator.apiClient import MathAPIClient
 # Initialize the client with your APIVerve API key
 api = MathAPIClient("[YOUR_API_KEY]")
 
-query = { "operation": "add", "a": 10, "b": 5 }
+query = {
+    "operation": "add",
+    "a": 10,
+    "b": 5
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "operation": "add", "a": 10, "b": 5 }
+query = {
+    "operation": "add",
+    "a": 10,
+    "b": 5
+}
 ```
 
 ###### Simple Request
@@ -128,7 +136,11 @@ from apiverve_mathcalculator.apiClient import MathAPIClient, MathAPIClientError
 
 api = MathAPIClient("[YOUR_API_KEY]")
 
-query = { "operation": "add", "a": 10, "b": 5 }
+query = {
+    "operation": "add",
+    "a": 10,
+    "b": 5
+}
 
 try:
     result = api.execute(query)
@@ -149,7 +161,11 @@ from apiverve_mathcalculator.apiClient import MathAPIClient, MathAPIClientError
 
 api = MathAPIClient("[YOUR_API_KEY]")
 
-query = { "operation": "add", "a": 10, "b": 5 }
+query = {
+    "operation": "add",
+    "a": 10,
+    "b": 5
+}
 
 try:
     result = api.execute(query)
@@ -183,7 +199,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_mathcalculator.apiClient import MathAPIClient, MathAPIClientError
 
-query = { "operation": "add", "a": 10, "b": 5 }
+query = {
+    "operation": "add",
+    "a": 10,
+    "b": 5
+}
 
 # Using context manager ensures proper cleanup
 with MathAPIClient("[YOUR_API_KEY]") as api:
@@ -209,7 +229,11 @@ from apiverve_mathcalculator.apiClient import MathAPIClient
 # Enable debug mode
 api = MathAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "operation": "add", "a": 10, "b": 5 }
+query = {
+    "operation": "add",
+    "a": 10,
+    "b": 5
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -224,8 +248,13 @@ from apiverve_mathcalculator.apiClient import MathAPIClient
 
 api = MathAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "operation": "add",
+    "a": 10,
+    "b": 5
+}
+
 try:
-    query = { "operation": "add", "a": 10, "b": 5 }
     result = api.execute(query)
     print(result)
 finally:
