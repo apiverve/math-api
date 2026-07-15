@@ -30,7 +30,7 @@ class mathWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/math';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"operation":{"type":"string","required":true},"a":{"type":"number","required":true},"b":{"type":"number","required":false}};
+        this.validationRules = {"operation":{"type":"string","required":true},"a":{"type":"number","required":true},"b":{"type":"number","required":true}};
     }
 
     /**
