@@ -1,6 +1,6 @@
 # Math Calculator API
 
-Math Calculator performs mathematical operations including basic arithmetic, advanced functions, and expression evaluation.
+Math Calculator performs mathematical operations including arithmetic, number properties, base conversions, and expression evaluation.
 
 ![Build Status](https://img.shields.io/badge/build-passing-green)
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
