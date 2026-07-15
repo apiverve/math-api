@@ -2,8 +2,8 @@ openapi: 3.0.4
 info:
   title: Math Calculator
   description: >-
-    Math Calculator performs mathematical operations including basic arithmetic,
-    advanced functions, and expression evaluation.
+    Math Calculator performs mathematical operations including arithmetic,
+    number properties, base conversions, and expression evaluation.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,8 +18,10 @@ servers:
 paths:
   /v1/math:
     post:
-      summary: Perform Operation
-      description: Perform a specific mathematical operation
+      summary: Basic Arithmetic
+      description: >-
+        Perform basic math operations: add, subtract, multiply, divide, power,
+        modulo
       operationId: math
       parameters: []
       responses:
@@ -68,17 +70,14 @@ paths:
                   description: Operation to perform
                 a:
                   type: number
-                  description: >-
-                    First number (or only number for single-param operations
-                    like sqrt, abs)
+                  description: First number
                 b:
                   type: number
-                  description: >-
-                    Second number (for two-param operations like add, subtract,
-                    multiply, divide)
+                  description: Second number
               required:
                 - operation
                 - a
+                - b
 components:
   securitySchemes:
     api_key:
