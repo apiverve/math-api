@@ -201,11 +201,36 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Math Calculator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "result": 15,
+    "operation": "add",
+    "input": {
+      "a": 10,
+      "b": 5
+    },
+    "steps": [
+      "10 + 5 = 15"
+    ]
+  }
 }
 ```
 
