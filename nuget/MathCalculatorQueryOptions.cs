@@ -17,15 +17,15 @@ namespace APIVerve.API.MathCalculator
         public string Operation { get; set; }
 
         /// <summary>
-        /// First number (or only number for single-param operations like sqrt, abs)
+        /// First number
         /// </summary>
         [JsonProperty("a")]
-        public string A { get; set; }
+        public double A { get; set; }
 
         /// <summary>
-        /// Second number (for two-param operations like add, subtract, multiply, divide)
+        /// Second number
         /// </summary>
         [JsonProperty("b")]
-        public string B { get; set; }
+        public double B { get; set; }
     }
 }
