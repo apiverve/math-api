@@ -25,12 +25,15 @@ namespace APIVerve.API.MathCalculator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("result")]
-        public long Result { get; set; }
+        public long? Result { get; set; }
 
         [JsonProperty("operation")]
         public string Operation { get; set; }
@@ -45,9 +48,21 @@ namespace APIVerve.API.MathCalculator
     public partial class Input
     {
         [JsonProperty("a")]
-        public long A { get; set; }
+        public long? A { get; set; }
 
         [JsonProperty("b")]
-        public long B { get; set; }
+        public long? B { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
