@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/math:
     post:
-      summary: Basic Arithmetic
+      summary: Math Calculator
       description: >-
         Perform basic math operations: add, subtract, multiply, divide, power,
         modulo
