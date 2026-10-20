@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -26,7 +26,7 @@ class MathAPIClient:
     VALIDATION_RULES = {
         "operation": {"type": "string", "required": True},
         "a": {"type": "number", "required": True},
-        "b": {"type": "number", "required": False}
+        "b": {"type": "number", "required": True}
     }
 
     # Format validation patterns
