@@ -1,7 +1,7 @@
 {
     "name": "apiverve/math",
     "description": "Math Calculator performs mathematical operations including arithmetic, number properties, base conversions, and expression evaluation.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "library",
     "license": "MIT",
     "authors": [
