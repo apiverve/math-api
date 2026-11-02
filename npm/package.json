@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/math",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Math Calculator performs mathematical operations including arithmetic, number properties, base conversions, and expression evaluation.",
   "main": "index.js",
   "types": "index.d.ts",
